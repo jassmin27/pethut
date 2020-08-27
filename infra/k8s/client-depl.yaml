@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: eu.gcr.io/pethut/client
+          image: jassminkaur/client
 ---
 apiVersion: v1
 kind: Service
