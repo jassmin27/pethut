@@ -13,7 +13,7 @@ beforeAll(async () => {
 });
 
 beforeEach(async () => {
-   //console.log("Seed BeforeEach");
+   console.log("Seed BeforeEach");
    //await seedOwner();
 });
 
