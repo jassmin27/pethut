@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pets
-          image: eu.gcr.io/pethut/pets
+          image: jassminkaur/pets
 ---
 apiVersion: v1
 kind: Service
