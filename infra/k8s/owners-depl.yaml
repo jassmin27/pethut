@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: owners
-          image: eu.gcr.io/pethut/owners
+          image: jassminkaur/owners
 ---
 apiVersion: v1
 kind: Service
