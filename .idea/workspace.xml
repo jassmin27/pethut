@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ecc97af0-5f46-4433-8ef1-4c73cc63ae13" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/images/bg-image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/images/bg-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/images/dog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/images/home-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/images/pattern-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/images/pethut-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/images/pethut-logo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/images/pethut-logo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/images/white-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/adoption/adoption-detail.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/adoption/adoption.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/adoption/list-adoptions.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/adoption/pet-adoption.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/home-page.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/navbar.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/owner/add-owner.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/owner/edit-owner.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/owner/list-owners.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/owner/owner.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/page-404.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pet/add-pet.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pet/edit-pet.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pet/list-pets-for-owner.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pet/list-pets.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pet/pet-detail.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/pet/pet.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client" />
+  </component>
+  <component name="ProjectId" id="1dwc7mlmJVYDZWgC1UdFlVFGXmb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pets" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\0009 AIT\MASE\Thesis Project\adopt-pet\pets" />
+      <recent name="D:\0009 AIT\MASE\Thesis Project\adopt-pet\pets\src" />
+      <recent name="D:\0009 AIT\MASE\Thesis Project\adopt-pet\infra\k8s" />
+      <recent name="D:\0009 AIT\MASE\Thesis Project\adopt-pet\adoptions" />
+      <recent name="D:\0009 AIT\MASE\Thesis Project\adopt-pet\client" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\0009 AIT\MASE\Thesis Project\adopt-pet\infra\k8s" />
+      <recent name="D:\0009 AIT\MASE\Thesis Project\adopt-pet\event-bus\src" />
+      <recent name="D:\0009 AIT\MASE\Thesis Project\adopt-pet\owners\src\routes\__tests__" />
+      <recent name="D:\0009 AIT\MASE\Thesis Project\adopt-pet\owners\src\routes" />
+      <recent name="D:\0009 AIT\MASE\Thesis Project\adopt-pet\owners\src" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ecc97af0-5f46-4433-8ef1-4c73cc63ae13" name="Default Changelist" comment="" />
+      <created>1593339441923</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593339441923</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="568" y="227" key="#Notifications" timestamp="1598438324909">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="568" y="227" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1598438324909" />
+    <state x="457" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598386390975">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="457" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1598386390975" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593781854074">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1593781854074" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1597167564159">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1597167564159" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1597167563687">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1597167563687" />
+    <state x="284" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595331503523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="284" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1595331503523" />
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598389529630">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1598389529630" />
+    <state x="390" y="0" width="585" height="728" key="find.popup" timestamp="1595331521178">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1595331521178" />
+  </component>
+</project>

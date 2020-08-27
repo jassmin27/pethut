@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1598534723827" clover="3.2.0">
+  <project timestamp="1598534723827" name="All files">
+    <metrics statements="62" coveredstatements="48" conditionals="4" coveredconditionals="4" methods="21" coveredmethods="9" elements="87" coveredelements="61" complexity="0" loc="62" ncloc="62" packages="4" files="4" classes="4"/>
+    <package name="src">
+      <metrics statements="16" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="app.js" path="D:\0009 AIT\MASE\Thesis Project\adopt-pet\owners\src\app.js">
+        <metrics statements="16" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.middleware">
+      <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="validator.js" path="D:\0009 AIT\MASE\Thesis Project\adopt-pet\owners\src\middleware\validator.js">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="24" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.models">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="owner.model.js" path="D:\0009 AIT\MASE\Thesis Project\adopt-pet\owners\src\models\owner.model.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routes">
+      <metrics statements="33" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="18" coveredmethods="7"/>
+      <file name="routes.js" path="D:\0009 AIT\MASE\Thesis Project\adopt-pet\owners\src\routes\routes.js">
+        <metrics statements="33" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="18" coveredmethods="7"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="63" count="3" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="97" count="3" type="stmt"/>
+        <line num="101" count="2" type="stmt"/>
+        <line num="106" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="107" count="1" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
+        <line num="117" count="1" type="stmt"/>
+        <line num="125" count="1" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="173" count="3" type="stmt"/>
+        <line num="175" count="1" type="stmt"/>
+        <line num="184" count="1" type="stmt"/>
+        <line num="194" count="1" type="stmt"/>
+        <line num="203" count="0" type="stmt"/>
+        <line num="228" count="3" type="stmt"/>
+        <line num="229" count="0" type="stmt"/>
+        <line num="231" count="0" type="stmt"/>
+        <line num="234" count="0" type="stmt"/>
+        <line num="240" count="0" type="stmt"/>
+        <line num="242" count="0" type="stmt"/>
+        <line num="245" count="3" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

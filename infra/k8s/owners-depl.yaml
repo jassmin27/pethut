@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: owners-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: owners
+  template:
+    metadata:
+      labels:
+        app: owners
+    spec:
+      containers:
+        - name: owners
+          image: eu.gcr.io/pethut/owners
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: owners-clusterip-srv
+spec:
+  selector:
+    app: owners
+  ports:
+    - name: owners
+      protocol: TCP
+      port: 5000
+      targetPort: 5000

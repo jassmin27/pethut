@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pets-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pets
+  template:
+    metadata:
+      labels:
+        app: pets
+    spec:
+      containers:
+        - name: pets
+          image: eu.gcr.io/pethut/pets
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pets-srv
+spec:
+  selector:
+    app: pets
+  ports:
+    - name: pets
+      protocol: TCP
+      port: 5001
+      targetPort: 5001

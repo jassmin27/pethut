@@ -1,0 +1,22 @@
+{
+  "name": "adopt-pet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "mocha": "^8.0.1",
+    "supertest": "^4.0.2"
+  },
+  "devDependencies": {
+    "nyc": "^15.1.0"
+  },
+  "scripts": {
+    "test": "mocha --recursive --exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
