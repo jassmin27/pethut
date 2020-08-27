@@ -1,4 +1,4 @@
-const app = require('../../app.js');
+/*const app = require('../../app.js');
 const request = require('supertest');
 let Owner = require('../../models/owner.model');
 
@@ -71,4 +71,4 @@ describe('POST /owners', () => {
 
   });
 
-})
+})*/
