@@ -1,7 +1,9 @@
 name: tests-owners
 
 on:
-  push
+  push:
+    paths: 
+      - 'owners/**'
 
 jobs:
   build:
