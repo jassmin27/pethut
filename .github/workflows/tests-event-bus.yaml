@@ -1,7 +1,9 @@
 name: tests-event-bus
 
 on:
-  push
+  push:
+    paths:
+      - 'event-bus/**'
 
 jobs:
   build:
