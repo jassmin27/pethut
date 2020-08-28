@@ -116,12 +116,13 @@ router.route('/').post( ownerValidationRules(), validate, (req, res) => {
             });
             newOwner.save()
                 .then(() => {
-
-                    // Emit OwnerAdded Event
-                    axios.post('http://event-bus-srv:5005/events', {
-                        type: 'OwnerAdded',
-                        data: newOwner
-                    });
+                    if(process.env.NODE_ENV !== 'test') {
+                     // Emit OwnerAdded Event
+                     axios.post('http://event-bus-srv:5005/events', {
+                         type: 'OwnerAdded',
+                         data: newOwner
+                     });
+                    }
                     res.status(200).send({
                         status: 'Owner Added Successfully',
                         id: newOwner._id
@@ -185,11 +186,12 @@ router.route('/:id').put( ownerValidationRules(), validate, (req, res) => {
         .then((newOwner) => {
 
             //console.log(newOwner);
-
-            axios.post('http://event-bus-srv:5005/events', {
-                type: 'OwnerUpdated',
-                data: newOwner
-            })
+            if(process.env.NODE_ENV !== 'test') {
+              axios.post('http://event-bus-srv:5005/events', {
+                  type: 'OwnerUpdated',
+                  data: newOwner
+              })
+            }
             //.then(response => {
                 res.status(200).send({
                     status: 'Owner Updated Successfully',
@@ -233,13 +235,15 @@ router.route('/:id').delete((req, res) => {
             });
 
             // Emit OwnerDeleted Event
-            axios.post('http://event-bus-srv:5005/events', {
-                type: 'OwnerDeleted',
-                data: {
-                    ownerId: req.params.id
-                }
-            })
-            .then(() => console.log("Event Emitted - OwnerDeleted"));
+            if(process.env.NODE_ENV !== 'test') {
+              axios.post('http://event-bus-srv:5005/events', {
+                  type: 'OwnerDeleted',
+                  data: {
+                      ownerId: req.params.id
+                  }
+              })
+              .then(() => console.log("Event Emitted - OwnerDeleted"));
+            }
         })
         .catch(err => res.status(400).json('Error: ' + err));
 });
