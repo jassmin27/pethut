@@ -1,7 +1,9 @@
 name: tests-adoptions
 
 on:
-  push
+  push:
+    paths: 
+    - 'adoptions/**'
 
 jobs:
   build:
