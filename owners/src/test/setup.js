@@ -6,6 +6,7 @@ const Mongo_URL_Test = 'mongodb://dbUser:hanji123@cluster0-shard-00-00-myh7e.mon
 //const Mongo_URL_Test = '';
 
 beforeAll(async () => {
+    process.env.NODE_ENV = 'test';
     await mongoose.connect(Mongo_URL_Test, {
         useNewUrlParser: true,
         useUnifiedTopology: true
