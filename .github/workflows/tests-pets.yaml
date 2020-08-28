@@ -1,7 +1,9 @@
 name: tests-pets
 
 on:
-  push
+  push:
+    paths:
+      - 'pets/**'
 
 jobs:
   build:
