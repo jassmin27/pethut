@@ -3,33 +3,60 @@
  *  components:
  *    schemas:
  *      Adoption:
- *        type: object
- *        required:
- *          - firstName
- *          - lastName
- *          - address
- *          - phone
- *          - email
- *        properties:
- *          firstName:
- *            type: string
- *          lastName:
- *            type: string
- *          address:
- *            type: string
- *          phone:
- *            type: string
- *            format: phone
- *          email:
- *            type: string
- *            format: email
- *            description: Needs to be unique.
+ *        type: array
+ *        pet:
+ *          type: object
+ *          properties:
+ *            name:
+ *              type: string
+ *            breed:
+ *              type: string
+ *            gender:
+ *              type: string
+ *            age:
+ *              type: number
+ *            vaccinated:
+ *              type: boolean
+ *            description:
+ *              type: string
+ *            image:
+ *              type: string
+ *              format: binary
+ *        owner:
+ *          type: object
+ *          properties:
+ *            firstName:
+ *              type: string
+ *            lastName:
+ *              type: string
+ *            address:
+ *              type: string
+ *            phone:
+ *              type: string
+ *              format: phone
+ *            email:
+ *              type: string
+ *              format: email
  *        example:
- *           firstName: John
- *           lastName: Taylor
- *           address: Athlone
- *           phone: '9874653022'
- *           email: john.taylor@gmail.com
+ *          pet:
+ *            name: Milo
+ *            breed: Rottweiler
+ *            gender: Male
+ *            age: 5
+ *            vaccinated: false
+ *            description: Some description..
+ *            image: 'uploads/pic.jpg'
+ *          owner:
+ *            firstName: Connie
+ *            lastName: Tucker
+ *            address: Athlone
+ *            phone: '9874653022'
+ *            email: connie.tucker@gmail.com
+ *          firstName: Bella
+ *          lastName: G
+ *          address: Athlone
+ *          email: bellag@gmail.com
+ *          date: ...
  */
 const mongoose = require('mongoose');
 

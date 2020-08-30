@@ -18,7 +18,7 @@ spec:
             backend:
               serviceName: owners-srv
               servicePort: 5000
-          - path: /pets
+          - path: /(pets|uploads)
             backend:
               serviceName: pets-srv
               servicePort: 5001

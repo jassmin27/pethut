@@ -15,18 +15,25 @@
  *        properties:
  *          name:
  *            type: string
+ *            default: Toby
  *          breed:
  *            type: string
+ *            default: Spaniel
  *          gender:
  *            type: string
+ *            default: Male
  *          age:
  *            type: number
+ *            default: 5
  *          vaccinated:
  *            type: boolean
+ *            default: true
  *          description:
  *            type: string
+ *            default: Some description..
  *          image:
  *            type: string
+ *            format: binary
  *        example:
  *           name: Toby
  *           breed: Spaniel
@@ -34,7 +41,7 @@
  *           age: 5
  *           vaccinated: true
  *           description: Test
- *           image: test.jpg
+ *           image: uploads/test.jpg
  */
 const mongoose = require('mongoose');
 

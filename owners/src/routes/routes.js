@@ -16,7 +16,7 @@ const { ownerValidationRules, validate } = require('../middleware/validator.js')
  *  /owners:
  *    get:
  *      summary: Get all owners
- *      tags: [Users]
+ *      tags: [Owners]
  *      responses:
  *        '200':
  *          description: Successful Operation
@@ -31,7 +31,7 @@ const { ownerValidationRules, validate } = require('../middleware/validator.js')
  // Get ALL Owners
 router.route('/').get((req, res) => {
     Owner.find()
-        .then(owners => res.json(owners))
+        .then(owners => res.status(200).json(owners))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -44,9 +44,11 @@ router.route('/').get((req, res) => {
  *      parameters:
  *        - in: path
  *          name: ownerId
- *          type: string
  *          required: true
- *      tags: [Users]
+ *          schema:
+ *            type: string
+ *            default: '5f1a8750bb8fcb4820068a69'
+ *      tags: [Owners]
  *      responses:
  *        '200':
  *          description: Successful Operation
@@ -62,7 +64,12 @@ router.route('/').get((req, res) => {
 // GET Owner By ID
 router.route('/:id').get((req, res) => {
     Owner.findById(req.params.id)
-        .then(owner => res.json(owner))
+        .then(owner => {
+            if(owner)
+                res.status(200).json(owner)
+            else
+                res.status(404).json('Owner not found')
+        })
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -77,7 +84,7 @@ router.route('/:id').get((req, res) => {
  *          application/json:
  *            schema:
  *              $ref: '#/components/schemas/Owner'
- *      tags: [Users]
+ *      tags: [Owners]
  *      responses:
  *        '200':
  *          description: Response body returns a success message and ID of the owner
@@ -89,9 +96,7 @@ router.route('/:id').get((req, res) => {
  *                  status: Owner Added Successfully
  *                  id: 5f4538d30fb839058e46cb54
  *        '400':
- *          description: Invalid ID supplied
- *        '404':
- *          description: Owner not found
+ *          description: Email already exists
  */
 // ADD New Owner
 router.route('/').post( ownerValidationRules(), validate, (req, res) => {
@@ -101,7 +106,7 @@ router.route('/').post( ownerValidationRules(), validate, (req, res) => {
     Owner.findOne({email: req.body.email})
         .then((existingOwner) => {
 
-            //console.log("existingOwner :" + existingOwner);
+            console.log("existingOwner :" + existingOwner);
 
             if(existingOwner != null) {
                 return res.status(400).json({ errors: [{'msg':'Email already exists'}] });
@@ -116,13 +121,12 @@ router.route('/').post( ownerValidationRules(), validate, (req, res) => {
             });
             newOwner.save()
                 .then(() => {
-                    if(process.env.NODE_ENV !== 'test') {
-                     // Emit OwnerAdded Event
-                     axios.post('http://event-bus-srv:5005/events', {
-                         type: 'OwnerAdded',
-                         data: newOwner
-                     });
-                    }
+
+                    // Emit OwnerAdded Event
+                    axios.post('http://event-bus-srv:5005/events', {
+                        type: 'OwnerAdded',
+                        data: newOwner
+                    });
                     res.status(200).send({
                         status: 'Owner Added Successfully',
                         id: newOwner._id
@@ -150,7 +154,7 @@ router.route('/').post( ownerValidationRules(), validate, (req, res) => {
  *          application/json:
  *            schema:
  *              $ref: '#/components/schemas/Owner'
- *      tags: [Users]
+ *      tags: [Owners]
  *      responses:
  *        '200':
  *          description: Response body returns a success message and updated owner object
@@ -183,24 +187,23 @@ router.route('/:id').put( ownerValidationRules(), validate, (req, res) => {
     });
 
     Owner.findOneAndUpdate({_id: req.params.id}, newOwner, {new: true})
-        .then((newOwner) => {
+        .then((ownerUpdated) => {
 
-            //console.log(newOwner);
-            if(process.env.NODE_ENV !== 'test') {
-              axios.post('http://event-bus-srv:5005/events', {
-                  type: 'OwnerUpdated',
-                  data: newOwner
-              })
-            }
-            //.then(response => {
+            if(ownerUpdated) {
+
                 res.status(200).send({
                     status: 'Owner Updated Successfully',
-                    owner: newOwner
+                    owner: ownerUpdated
                 });
-            /*})
-            .catch((error) => {
-                console.log("Error :" + error.response.data);
-            })*/
+                axios.post('http://event-bus-srv:5005/events', {
+                    type: 'OwnerUpdated',
+                    data: ownerUpdated
+                })
+            }
+            else {
+                res.status(404).send('Owner not found');
+            }
+
         })
         .catch(err => res.status(400).json('Error emitting event: ' + err));
 
@@ -217,7 +220,7 @@ router.route('/:id').put( ownerValidationRules(), validate, (req, res) => {
  *          name: ownerId
  *          type: string
  *          required: true
- *      tags: [Users]
+ *      tags: [Owners]
  *      responses:
  *        '200':
  *          description: Owner Deleted
@@ -228,22 +231,32 @@ router.route('/:id').put( ownerValidationRules(), validate, (req, res) => {
  */
 // DELETE Owner By ID
 router.route('/:id').delete((req, res) => {
-    Owner.findByIdAndDelete(req.params.id)
-        .then(() => {
-            res.status(200).send({
-                status: 'Owner Deleted Successfully'
-            });
+    Owner.findByIdAndDelete({_id: req.params.id})
+        .then((owner) => {
 
-            // Emit OwnerDeleted Event
-            if(process.env.NODE_ENV !== 'test') {
-              axios.post('http://event-bus-srv:5005/events', {
-                  type: 'OwnerDeleted',
-                  data: {
-                      ownerId: req.params.id
-                  }
-              })
-              .then(() => console.log("Event Emitted - OwnerDeleted"));
+            console.log("In Service:: OWNER to DELETE : " + owner);
+
+            if(owner) {
+                res.status(200).send({
+                    status: 'Owner Deleted Successfully'
+                });
+
+                // Emit OwnerDeleted Event
+                axios.post('http://event-bus-srv:5005/events', {
+                    type: 'OwnerDeleted',
+                    data: {
+                        ownerId: req.params.id
+                    }
+                })
             }
+            else {
+                res.status(404).send({
+                   status: 'Owner Not Found'
+                });
+            }
+
+
+            //.then(() => console.log("Event Emitted - OwnerDeleted"));
         })
         .catch(err => res.status(400).json('Error: ' + err));
 });

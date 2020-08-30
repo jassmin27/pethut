@@ -13,7 +13,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: "http://pethut.com/owners"
+                url: "http://pethut.com"
             }
         ]
     },

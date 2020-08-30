@@ -11,4 +11,20 @@ describe('GET /owners', () => {
      done();
   });
 
+  it('OK, Getting owner by ID works', async done => {
+     let res = await request(app).post('/owners')
+     .send({
+           firstName: 'Mary',
+           lastName: 'Cooper',
+           address: 'Texas',
+           phone: '0102030405',
+           email: 'mary.cooper@gmail.com'
+     })
+     expect(200);
+
+     res = await request(app).get('/owners/'+ res.body.id)
+     expect(200);
+     done();
+  });
+
 })

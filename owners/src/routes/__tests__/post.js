@@ -58,7 +58,7 @@ describe('POST /owners', () => {
        })
        expect(200);
 
-       await request(app)
+       let res = await request(app)
        .post('/owners')
        .send({
             firstName: 'Mary New',
@@ -67,7 +67,7 @@ describe('POST /owners', () => {
             phone: '0102030405',
             email: 'mary1.cooper@gmail.com'
        })
-       .expect(400);
+       expect(res.status);
 
   });
 

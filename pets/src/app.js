@@ -13,7 +13,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: "http://pethut.com/pets"
+                url: "http://pethut.com"
             }
         ]
     },
@@ -27,6 +27,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(petRouter);
+app.use('/uploads', express.static('uploads'));
 app.use('/pets-api', swaggerUI.serve, swaggerUI.setup(swaggerDocs, {explorer : true}));
 
 // Event Listener for Events Received

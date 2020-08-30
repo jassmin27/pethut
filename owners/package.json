@@ -5,16 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": "jest"
+    "test": "jest",
+    "test:cov": "jest --coverage --verbose"
   },
   "jest": {
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
       "./src/test/setup.js"
     ]
-  },
-  "nyc": {
-    "include": "src"
   },
   "keywords": [],
   "author": "",
