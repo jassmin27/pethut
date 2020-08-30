@@ -18,7 +18,6 @@ const start = async () => {
   }
 
   app.listen(PORT, () => {
-    console.log("Testing code changes...");
     console.log("Change for Github - removed npm run test");
     console.log(`Owner Server running on port: ${PORT}`);
   });
