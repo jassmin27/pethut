@@ -36,6 +36,7 @@ function App() {
             <Route path="/pets/:pet_id" exact component={PetDetail} />
             <Route path="/adoptions" exact component={AdoptionsList} />
             <Route path="/adoptions/:adoption_id" exact component={AdoptionDetail} />
+            <Route component={Page404} />
         </Switch>
         </div>
     </Router>
