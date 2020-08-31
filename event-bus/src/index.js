@@ -21,6 +21,8 @@ app.post('/events', (req, res) => {
     axios.post('http://pets-srv:5001/events', event);
     //Query
     axios.post('http://query-srv:5002/events', event);
+    //Adoption
+    axios.post('http://adoptions-srv:5003/events', event);
 
     res.send({status: 'OK, from Event-Bus'});
 });
