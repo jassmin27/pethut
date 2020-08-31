@@ -4,7 +4,7 @@ const Pet = (props) => {
     return(
         <div className="row pet-detail-row">
             <div className="pet-feature-container col-sm-2">
-                <img src={'uploads/' + props.image} alt="Pet" width="100%" className="rounded"/>
+                <img src={'http://pethut.com/uploads/' + props.image} alt="Pet" width="100%" className="rounded"/>
             </div>
             <div className="pet-feature-container col-sm-2">
                 <div className="pet-feature">
