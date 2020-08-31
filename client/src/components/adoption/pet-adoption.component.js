@@ -53,8 +53,6 @@ class PetAdopt extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        console.log("Pet detail received in pet adoption comp");
-        console.log(this.props.petDetail);
 
         const adoption = {
             pet: this.props.petDetail,
@@ -68,6 +66,7 @@ class PetAdopt extends Component {
           errors: []
         })
 
+        console.log("Adoption object");
         console.log(adoption);
 
         axios.post('http://pethut.com/adoptions', adoption)
