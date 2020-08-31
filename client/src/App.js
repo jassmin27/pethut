@@ -22,7 +22,7 @@ import AdoptionDetail from './components/adoption/adoption-detail.component';
 function App() {
 
   return (
-    <Router>
+    <Router history={hashHistory}>
         <div className="container main p-4 my-5 shadow">
         <Navbar />
         <Switch>
