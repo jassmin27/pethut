@@ -28,8 +28,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(petRouter);
-app.use('/uploads', express.static('http://pethut.com/pets','uploads'));
-//app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+//app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/pets-api', swaggerUI.serve, swaggerUI.setup(swaggerDocs, {explorer : true}));
 
 module.exports = app;
