@@ -160,6 +160,9 @@ router.route('/events').post((req, res) => {
                })
               .catch(err => res.status(400).json('Error : ' + err));
     }
+    else if(type === "PetDeleted") {
+
+    }
 });
 
 module.exports = router;

@@ -322,7 +322,7 @@ router.route('/events').post((req, res) => {
     const { type, data } = req.body;
 
     if(type === "AdoptionCompleted") {
-
+        // Delete the pet by id
     }
 
     res.send("Event Received!");

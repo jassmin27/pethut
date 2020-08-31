@@ -114,10 +114,12 @@ router.route('/').post( adoptionValidationRules(), validate, (req, res) => {
 
             if(process.env.NODE_ENV != 'test') {
                 // Emit Event
-                axios.post('http://event-bus-srv:5005/events', {
+                /*axios.post('http://event-bus-srv:5005/events', {
                     type: 'AdoptionCompleted',
                     data: newAdoption
-                });
+                });*/
+                // Delete the Pet
+                axios.delete('http://pets-srv:5001/owners/' + req.body.owner.id + '/pets/'+ req.body.pet.id);
             }
             res.status(200).send({
                 status: 'Adoption Created Successfully',
