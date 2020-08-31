@@ -44,8 +44,17 @@ describe('GET /pets', () => {
        done();
   });
 
-  it('FAIL, Getting a pet by invalid ID returns 404', async done => {
-        request(app).get('/pets/123')
+  it('FAIL, Getting a pet a returns 404', async done => {
+          request(app).get('/pets/123')
+          .then((res) => {
+              expect(res.statusCode).toEqual(400);
+              done();
+          })
+          .catch((err) => done(err));
+  });
+
+  it('FAIL, Getting a pet returns 404, if ID does not exist', async done => {
+        request(app).get('/pets/5f1a8a5a51102a3028b8ab00')
         .then((res) => {
             expect(res.statusCode).toEqual(404);
             done();
