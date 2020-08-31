@@ -19,7 +19,6 @@ const start = async () => {
 
   app.listen(PORT, () => {
     console.log(`Pet Server running on port: ${PORT}`);
-    console.log("__dirname : " + express.static('uploads'));
   });
 };
 
