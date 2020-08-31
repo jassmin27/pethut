@@ -54,7 +54,8 @@ class PetAdopt extends Component {
     onSubmit(e) {
         e.preventDefault();
         console.log("Pet detail received in pet adoption comp");
-        console.log(petDetail);
+        console.log(this.props.petDetail);
+
         const adoption = {
             pet: this.props.petDetail,
             owner: this.props.ownerDetail,
