@@ -119,7 +119,9 @@ router.route('/').post( adoptionValidationRules(), validate, (req, res) => {
                     data: newAdoption
                 });*/
                 // Delete the Pet
-                axios.delete('http://pets-srv:5001/owners/' + req.body.owner.id + '/pets/'+ req.body.pet.id);
+                axios.delete('http://pets-srv:5001/owners/' + req.body.owner.id + '/pets/'+ req.body.pet.id)
+                    .then(() => console.log("Call for Pet Deletion on adoption"))
+                    .catch(err => console.log('Error deleting pet on adoption: ' + err))
             }
             res.status(200).send({
                 status: 'Adoption Created Successfully',
