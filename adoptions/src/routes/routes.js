@@ -121,7 +121,7 @@ router.route('/').post( adoptionValidationRules(), validate, (req, res) => {
                     data: newAdoption
                 });*/
                 // Delete the Pet
-                const deleteUrl = 'http://pets-srv:5001/owners/' + newAdoption.owner._id + '/pets/'+ newAdoption.pet._id;
+                const deleteUrl = 'http://pets-srv:5001/owners/' + newAdoption.owner.ownerId + '/pets/'+ newAdoption.pet._id;
                 console.log("Delete URL : " + deleteUrl);
                 axios.delete(deleteUrl)
                     .then(() => console.log("Call for Pet Deletion on adoption"))

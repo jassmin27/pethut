@@ -149,6 +149,8 @@ router.route('/events').post((req, res) => {
         console.log("PetId Received : " + petId);
         Query.findOneAndUpdate({ownerId:ownerId}, {$pull:{ pets:{ _id: petId}}}, {new: true})
               .then((response) => {
+                 console.log("Response Pet Delete in Query");
+                 console.log(response);
                  if(response) {
                      console.log("Pet found and Deleted from Queries DB");
                      res.json("Pet found and Deleted from Queries DB :" + response);

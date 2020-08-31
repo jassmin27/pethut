@@ -27,7 +27,7 @@
  *        owner:
  *          type: object
  *          properties:
- *            _id:
+ *            ownerId:
  *              tye: string
  *            firstName:
  *              type: string
@@ -52,7 +52,7 @@
  *            description: Some description..
  *            image: 'uploads/pic.jpg'
  *          owner:
- *            _id: '5f1a8786bb8fcb4820068a6a'
+ *            ownerId: '5f1a8786bb8fcb4820068a6a'
  *            firstName: Connie
  *            lastName: Tucker
  *            address: Athlone
@@ -78,7 +78,7 @@ const adoptionSchema = new mongoose.Schema({
         image: String
     },
     owner: {
-        _id: String,
+        ownerId: String,
         firstName: { type:String, required:true},
         lastName: { type:String, required:true},
         address: { type:String, required:true},
