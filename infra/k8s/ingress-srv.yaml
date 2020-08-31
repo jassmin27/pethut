@@ -22,10 +22,10 @@ spec:
             backend:
               serviceName: pets-srv
               servicePort: 5001
-          - path: /uploads
+          - path: /src/public/images
             backend:
-              serviceName: client-srv
-              servicePort: 3000
+              serviceName: pets-srv
+              servicePort: 5001
           - path: /query
             backend:
               serviceName: query-srv
