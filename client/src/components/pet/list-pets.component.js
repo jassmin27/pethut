@@ -57,7 +57,7 @@ const PetsList = () => {
                         <div key={index} className="pet-thumb col-sm-3 rounded my-2">
                             <NavLink className="internal-link" to={'/pets/'+pet._id}>
                                 <div className="content shadow rounded p-2">
-                                    <img src={pet.image} alt="Pet" className="rounded"/>
+                                    <img src={'uploads/' + pet.image} alt="Pet" className="rounded"/>
                                     <div className="mx-2">
                                         <h1 className="petName mt-2">{pet.name}</h1>
                                         <FontAwesomeIcon icon={faPaw} size="lg"/>
