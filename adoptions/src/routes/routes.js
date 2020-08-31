@@ -110,7 +110,7 @@ router.route('/').post( adoptionValidationRules(), validate, (req, res) => {
         date: Date.now()
     });
     console.log(newAdoption);
-    
+
     newAdoption.save()
         .then(() => {
 
