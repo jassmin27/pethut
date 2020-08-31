@@ -171,7 +171,7 @@ class EditPet extends Component {
                     </div>
                     <div className="form-group row">
                         <label className="col-sm-2">Picture: </label>
-                        <img className="rounded col-sm-2 p-0" src={'http://pethut.com/' + this.state.imagePath} alt="Pet" width="100%"/>
+                        <img className="rounded col-sm-2 p-0" src={'http://pethut.com/uploads/' + this.state.imagePath} alt="Pet" width="100%"/>
                         <input type="file" className="col-sm-8 form-control-file" name="image" accept="image/*" onChange={this.onChangeImage}/>
                     </div>
 
