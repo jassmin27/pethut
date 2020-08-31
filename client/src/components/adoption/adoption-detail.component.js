@@ -43,7 +43,7 @@ const AdoptionDetail = () => {
                 <div className="col-sm-3 clearfix">
                     <h4>Pet Details</h4>
                     <div className='content p-2'>
-                        <img className='rounded' src={'http://pethut.com/' + petDetail.image} width='40%' alt="Pet"/>
+                        <img className='rounded' src={'http://pethut.com/uploads/' + petDetail.image} width='40%' alt="Pet"/>
                         <p className='font-weight-bold'>{ petDetail.name }</p>
                         <p>{ petDetail.breed }</p>
                         <p>{ petDetail.gender }</p>

@@ -37,7 +37,7 @@ const AdoptionsList = () => {
                         <div className="col-sm-3 clearfix">
                             { index===0 && (<h4>Pet Details</h4>) }
                             <div className='content p-2'>
-                                <img className='rounded' src={'uploads/' + adoption.pet.image} width='40%' alt="Pet"/>
+                                <img className='rounded' src={'http://pethut.com/uploads/' + adoption.pet.image} width='40%' alt="Pet"/>
                                 <p className='font-weight-bold'>{ adoption.pet.name }</p>
                                 <p>{ adoption.pet.breed }</p>
                                 <p>{ adoption.pet.gender }</p>
