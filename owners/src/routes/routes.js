@@ -122,11 +122,13 @@ router.route('/').post( ownerValidationRules(), validate, (req, res) => {
             newOwner.save()
                 .then(() => {
 
-                    // Emit OwnerAdded Event
-                    axios.post('http://event-bus-srv:5005/events', {
-                        type: 'OwnerAdded',
-                        data: newOwner
-                    });
+                    if(process.env.NODE_ENV != 'test') {
+                        // Emit OwnerAdded Event
+                        axios.post('http://event-bus-srv:5005/events', {
+                            type: 'OwnerAdded',
+                            data: newOwner
+                        });
+                    }
                     res.status(200).send({
                         status: 'Owner Added Successfully',
                         id: newOwner._id
@@ -195,10 +197,12 @@ router.route('/:id').put( ownerValidationRules(), validate, (req, res) => {
                     status: 'Owner Updated Successfully',
                     owner: ownerUpdated
                 });
-                axios.post('http://event-bus-srv:5005/events', {
-                    type: 'OwnerUpdated',
-                    data: ownerUpdated
-                })
+                if(process.env.NODE_ENV != 'test') {
+                    axios.post('http://event-bus-srv:5005/events', {
+                        type: 'OwnerUpdated',
+                        data: ownerUpdated
+                    })
+                }
             }
             else {
                 res.status(404).send('Owner not found');
@@ -241,13 +245,15 @@ router.route('/:id').delete((req, res) => {
                     status: 'Owner Deleted Successfully'
                 });
 
-                // Emit OwnerDeleted Event
-                axios.post('http://event-bus-srv:5005/events', {
-                    type: 'OwnerDeleted',
-                    data: {
-                        ownerId: req.params.id
-                    }
-                })
+                if(process.env.NODE_ENV != 'test') {
+                    // Emit OwnerDeleted Event
+                    axios.post('http://event-bus-srv:5005/events', {
+                        type: 'OwnerDeleted',
+                        data: {
+                            ownerId: req.params.id
+                        }
+                    })
+                }
             }
             else {
                 res.status(404).send({

@@ -30,10 +30,4 @@ app.use(petRouter);
 app.use('/uploads', express.static('uploads'));
 app.use('/pets-api', swaggerUI.serve, swaggerUI.setup(swaggerDocs, {explorer : true}));
 
-// Event Listener for Events Received
-app.post('/events', (req, res) => {
-    console.log("Event Received by Pet Service: " + req.body.type);
-    res.send({});
-});
-
 module.exports = app;

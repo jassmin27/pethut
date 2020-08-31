@@ -112,11 +112,13 @@ router.route('/').post( adoptionValidationRules(), validate, (req, res) => {
     newAdoption.save()
         .then(() => {
 
-            // Emit Event
-            /*axios.post('http://event-bus-srv:5005/events', {
-                type: 'AdoptionCompleted',
-                data: newAdoption
-            });*/
+            if(process.env.NODE_ENV != 'test') {
+                // Emit Event
+                axios.post('http://event-bus-srv:5005/events', {
+                    type: 'AdoptionCompleted',
+                    data: newAdoption
+                });
+            }
             res.status(200).send({
                 status: 'Adoption Created Successfully',
                 id: newAdoption._id

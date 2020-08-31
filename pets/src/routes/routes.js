@@ -318,6 +318,13 @@ router.route('/owners/:owner_id/pets').delete((req, res) => {
 // Event Listener for Events Received
 router.route('/events').post((req, res) => {
     console.log("Event Received in Pet Service: " + req.body.type);
+
+    const { type, data } = req.body;
+
+    if(type === "AdoptionCompleted") {
+
+    }
+
     res.send("Event Received!");
 });
 

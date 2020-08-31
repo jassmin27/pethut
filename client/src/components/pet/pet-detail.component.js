@@ -20,6 +20,7 @@ const PetDetail = () => {
     const getPetDetail = async () => {
         let response = await fetch('http://pethut.com/pets/' + params.pet_id);
         const petDetail = await response.json();
+        console.log("Pet Detail : " + petDetail);
         setPetDetail(petDetail);
 
         // Get Owner Detail from Query Service
