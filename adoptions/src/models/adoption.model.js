@@ -7,6 +7,8 @@
  *        pet:
  *          type: object
  *          properties:
+ *            _id:
+ *              tye: string
  *            name:
  *              type: string
  *            breed:
@@ -25,6 +27,8 @@
  *        owner:
  *          type: object
  *          properties:
+ *            _id:
+ *              tye: string
  *            firstName:
  *              type: string
  *            lastName:
@@ -39,6 +43,7 @@
  *              format: email
  *        example:
  *          pet:
+ *            _id: '5f1a8af751102a3028b8ab37'
  *            name: Milo
  *            breed: Rottweiler
  *            gender: Male
@@ -47,6 +52,7 @@
  *            description: Some description..
  *            image: 'uploads/pic.jpg'
  *          owner:
+ *            _id: '5f1a8786bb8fcb4820068a6a'
  *            firstName: Connie
  *            lastName: Tucker
  *            address: Athlone
@@ -62,6 +68,7 @@ const mongoose = require('mongoose');
 
 const adoptionSchema = new mongoose.Schema({
     pet: {
+        _id: String,
         name: String,
         breed: String,
         gender: String,
@@ -71,6 +78,7 @@ const adoptionSchema = new mongoose.Schema({
         image: String
     },
     owner: {
+        _id: String,
         firstName: { type:String, required:true},
         lastName: { type:String, required:true},
         address: { type:String, required:true},
