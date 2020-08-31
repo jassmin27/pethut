@@ -22,7 +22,7 @@ spec:
             backend:
               serviceName: pets-srv
               servicePort: 5001
-          - path: /src/public/images
+          - path: /public/images
             backend:
               serviceName: pets-srv
               servicePort: 5001
