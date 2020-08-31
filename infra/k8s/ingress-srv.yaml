@@ -24,8 +24,8 @@ spec:
               servicePort: 5001
           - path: /uploads
             backend:
-              serviceName: pets-srv
-              servicePort: 5001
+              serviceName: client-srv
+              servicePort: 3000
           - path: /query
             backend:
               serviceName: query-srv
