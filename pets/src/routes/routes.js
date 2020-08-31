@@ -138,7 +138,7 @@ router.route('/owners/:id/pets').post( upload.single('image'), petValidationRule
         age: req.body.age,
         vaccinated: req.body.vaccinated,
         description: req.body.description,
-        image: req.file.path
+        image: req.file.filename
     });
     newPet.save()
         .then(() => {
