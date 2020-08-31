@@ -37,7 +37,7 @@ const PetDetail = () => {
         <div className="content-div pet-detail-container m-0 my-4 row">
             <div className="col-sm-12 my-3"><h2>Pet Details</h2></div>
             <div className="col-sm-5">
-                <img className='rounded' src={'http://pethut.com/' + petDetail.image} width='100%' alt="Pet"/>
+                <img className='rounded' src={'uploads/' + petDetail.image} width='100%' alt="Pet"/>
             </div>
             <div className="col-sm-7 pet-detail-content rounded shadow">
                 <h1>{petDetail.name}</h1>
