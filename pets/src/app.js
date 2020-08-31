@@ -30,6 +30,7 @@ app.use(express.json());
 app.use(petRouter);
 //app.use('/uploads', express.static('uploads'));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+console.log("Uploads Path : " + path.join(__dirname, 'uploads'));
 app.use('/pets-api', swaggerUI.serve, swaggerUI.setup(swaggerDocs, {explorer : true}));
 
 module.exports = app;
