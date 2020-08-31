@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.icon-svg {
+    pointer-events: none;
+}
+body {
+    font-family: 'Roboto', sans-serif !important;
+    /*background-image: url('/images/pattern-bg.png');
+    height: 600px;
+    background-repeat: no-repeat;*/
+    background-color: #9fc7c7 !important;
+    /*background-image: url('/images/bg-image.png');
+    max-height: 780px;
+    background-repeat: no-repeat;
+    background-color: #d3fcfe !important;*/
+}
+.container.main {
+    background-color: #fff;
+    /*background-image: url('/images/white-bg.png');
+    background-repeat: no-repeat;
+    background-color: #fff;*/
+    min-height: 550px;
+    max-width: 90%;
+}
+.home-bg {
+    margin-bottom: -16px;
+    position: relative;
+}
+.home-adopt-btn {
+    width: 250px;
+    background-color: #fd506c !important;
+    border-color: #fd506c !important;
+    border-radius: 20px !important;
+
+    position: absolute;
+    bottom: 25%;
+    left: 170px;
+
+    font-size: 18px !important;
+    font-family: 'Varela Round', cursive;
+
+    transition: all 0.3s linear;
+}
+.home-adopt-btn:hover {
+    background-color: #ea3f5a !important;
+}
+.navbar {
+    font-family: 'Varela Round', cursive;
+}
+.navbar a.nav-link {
+    color: #505050;
+    font-size: 18px;
+    border: 2px solid white;
+    transition: all 0.3s linear;
+}
+.navbar a.nav-link:hover {
+    border: 2px solid grey;
+    color: #505050;
+}
+.navbar a.nav-link:active, a.nav-link.active {
+    border: 2px solid grey;
+    color: #505050;
+}
+.navbar-brand {
+    margin: 35px 0 0 -5px;
+}
+.navbar-brand img {
+    margin-left: 15px;
+}
+.navbar-brand p {
+    text-transform: uppercase;
+    font-size: 20px !important;
+    color: #575757;
+    margin-top: -2px;
+}
+h1, h2, h3, h4 {
+    font-family: 'Varela Round', cursive;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 10px !important;
+    margin: 0 10px;
+}
+.content-div {
+    margin: 40px 0;
+    position: relative;
+}
+.pet-thumb .content {
+    cursor: pointer;
+}
+.pet-thumb p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+}
+.pet-thumb img {
+    width: 100%;
+}
+.petBreed {
+    margin: -5px 0 7px 5px !important;
+    color: grey;
+    font-size: 18px;
+    font-family: 'Varela Round', cursive;
+    display: inline-block;
+}
+.success-msg {
+    background: #4af386;
+    padding: 10px;
+    font-family: 'Varela Round', cursive;
+    width: 100%;
+}
+.success-msg p {
+    font-size: 18px;
+}
+/*.success-msg.pet-deleted {
+    position: absolute;
+}
+.edit-owner {
+    position: relative;
+}*/
+.edit-owner h1 {
+    font-size: 30px;
+    font-family: 'Varela Round', cursive;
+}
+.navbar {
+    height: 80px;
+}
+.div-width {
+    /*width: 60%;
+    margin-left: 30px;*/
+}
+.pets-container {
+    margin-top: 35px;
+}
+.pet-detail-content {
+    padding: 30px !important;
+}
+.pet-detail-content h1 {
+    margin-bottom: 0;
+}
+p.pet-feature-breed {
+    margin: -5px 0 20px 5px;
+    color: grey;
+    font-size: 18px;
+    font-family: 'Varela Round', cursive;
+    display: inline-block;
+}
+li.pet-feature {
+    background: #f9f9f9;
+    border-radius: 15px;
+    width: 90px;
+    height: 70px;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    padding-top: 15px;
+    box-shadow: 0 0.2rem 0.3rem rgba(0,0,0,.15)!important;
+}
+ul.pet-features-list li.pet-feature:nth-child(3) {
+    width: 120px;
+}
+ul.pet-features-list p {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    font-family: 'Varela Round', cursive;
+}
+.pet-about {
+    font-size: 15px;
+    color: grey;
+    font-family: 'Varela Round', cursive;
+}
+.pet-owner-detail {
+    border-top: 1px solid #f1f0f0;
+    margin-top: 30px;
+}
+.pet-owner-name {
+    font-size: 25px;
+}
+.pet-owner-tag {
+    color: grey;
+    font-size: 18px;
+    font-family: 'Varela Round', cursive;
+    display: inline-block;
+}
+.pet-for-owner, .owner-detail-row {
+    position: relative;
+}
+.pet-buttons, .owner-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.pet-detail-row {
+    margin:0;
+    padding: 0;
+    font-size: 15px;
+}
+.pet-detail-row p {
+
+}
+.pet-detail-row h1 {
+    font-size: 18px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.pet-feature-container {
+    display: inline-block;
+    float: left;
+}
+.breed-filter {
+    /*border: 1px solid #eaeaea;
+    border-radius: 5px;*/
+    position: absolute;
+    right: -8px;
+    top: -15px;
+}
+.breed-filter div {
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'Varela Round', cursive;
+}
+.breed-filter .dropdown-toggle {
+    width: 200px;
+    text-align: right;
+}
+.adoption-detail {
+    border: 1px solid #dcdbdb;
+    border-radius: 5px;
+}
+.adoption-detail div {
+    margin: 0;
+    padding: 0;
+}
+.adoption-detail h4 {
+    background: #e8e8e8;
+    padding: 10px;
+}
+.adoption-detail p {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+.adoption-detail img {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.page-title {
+    margin-bottom: 0;
+}
+a.internal-link {
+    color: #000;
+}
+a.internal-link:hover {
+    text-decoration: none;
+    color: #000;
+}
+a.internal-link .content {
+    transition: all 0.4s ease-out;
+}
+a.internal-link .content:hover {
+    background: #9fc7c7;
+}
+form.pet-details {
+    width: 98%;
+}
