@@ -96,8 +96,7 @@ class AddPet extends Component {
           .then(res => {
             console.log(res.data);
             this.setState({
-              formSuccess: true,
-              redirect: true
+              formSuccess: true
             })
             setTimeout(() => { this.onAddComplete(); }, 1500);
 
