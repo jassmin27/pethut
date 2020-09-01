@@ -34,7 +34,7 @@ router.route('/').get((req, res) => {
         .then(owners => res.status(200).json(owners))
         .catch(err => res.status(400).json({
            status: 'Bad Request'
-        });
+        }))
 });
 
 /**
@@ -76,7 +76,7 @@ router.route('/:id').get((req, res) => {
         })
         .catch(err => res.status(400).json({
            status: 'Bad Request'
-        });
+        }))
 });
 
 /**
@@ -141,12 +141,12 @@ router.route('/').post( ownerValidationRules(), validate, (req, res) => {
                     });
                  })
                 .catch(err => res.status(400).json({
-                   status: 'Bad Request'
-                });
+           status: 'Bad Request'
+        }))
         })
         .catch(err => res.status(400).json({
            status: 'Bad Request'
-        });
+        }))
 
 });
 
@@ -222,8 +222,8 @@ router.route('/:id').put( ownerValidationRules(), validate, (req, res) => {
 
         })
         .catch(err => res.status(400).json({
-            status: 'Bad Request'
-         });
+           status: 'Bad Request'
+        }))
 
 });
 
@@ -279,8 +279,8 @@ router.route('/:id').delete((req, res) => {
             //.then(() => console.log("Event Emitted - OwnerDeleted"));
         })
         .catch(err => res.status(400).json({
-             status: 'Bad Request'
-        });
+           status: 'Bad Request'
+        }))
 });
 
 module.exports = router;

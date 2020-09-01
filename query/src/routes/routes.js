@@ -137,7 +137,22 @@ router.route('/events').post((req, res) => {
             .catch(err => res.status(400).json('Error: ' + err));
     }
     else if(type === "PetUpdated") {
-        const { petUpdated } = data;
+        const { petUpdated, ownerId } = data;
+
+        Query.findOneAndUpdate({ownerId:ownerId, pets:{ _id: petUpdated._id}}, {$set: petUpdated}, {new: true})
+              .then((response) => {
+                 console.log("Response Pet Updated in Query");
+                 console.log(response);
+                 if(response) {
+                     console.log("Pet found and Updated in Queries DB");
+                     res.json("Pet found and Updated in Queries DB :" + response);
+                 }
+                 else {
+                    console.log("Pet NOT found in Queries DB for Update");
+                    res.json("Pet NOT found in Queries DB for Update");
+                 }
+               })
+              .catch(err => res.status(400).json('Error : ' + err));
     }
     else if(type === "PetDeleted") {
         // OwnerId and PetId are received

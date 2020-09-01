@@ -61,7 +61,7 @@ router.route('/pets').get((req, res) => {
         .then(pets => res.status(200).json(pets))
         .catch(err => res.status(400).json({
            status: 'Bad Request'
-        });
+        }))
 });
 
 /**
@@ -102,8 +102,8 @@ router.route('/pets/:id').get((req, res) => {
                 });
         })
         .catch(err => res.status(400).json({
-            status: 'Bad Request'
-        });
+           status: 'Bad Request'
+        }))
 });
 
 /**
@@ -165,7 +165,7 @@ router.route('/owners/:id/pets').post( upload.single('image'), petValidationRule
         })
         .catch(err => res.status(400).json({
            status: 'Bad Request'
-        });
+        }))
 
         /*})
         .catch(err => res.status(404).send({
@@ -240,7 +240,10 @@ router.route('/owners/:owner_id/pets/:pet_id').put( upload.single('image'), petV
                 if(process.env.NODE_ENV != 'test') {
                     axios.post('http://event-bus-srv:5005/events', {
                         type: 'PetUpdated',
-                        data: petUpdated
+                        data: {
+                            petUpdated,
+                            ownerId: req.params.owner_id
+                        }
                     })
                 }
                 res.status(200).send({
@@ -256,8 +259,8 @@ router.route('/owners/:owner_id/pets/:pet_id').put( upload.single('image'), petV
 
         })
         .catch(err => res.status(400).json({
-            status: 'Bad Request'
-         });
+           status: 'Bad Request'
+        }))
 });
 
 /**
@@ -316,7 +319,7 @@ router.route('/owners/:owner_id/pets/:pet_id').delete((req, res) => {
         })
         .catch(err => res.status(400).json({
            status: 'Bad Request'
-        });
+        }))
 });
 
 // BATCH Delete
@@ -335,7 +338,7 @@ router.route('/owners/:owner_id/pets').delete((req, res) => {
         })
         .catch(err => res.status(400).json({
            status: 'Bad Request'
-        });
+        }))
 });
 
 // Event Listener for Events Received

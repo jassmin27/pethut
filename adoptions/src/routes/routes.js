@@ -31,7 +31,7 @@ router.route('/').get((req, res) => {
         .then(adoptions => res.status(200).json(adoptions))
         .catch(err => res.status(400).json({
            status: 'Bad Request'
-        });
+        }))
 });
 
 /**
@@ -75,7 +75,7 @@ router.route('/:adoption_id').get((req, res) => {
         })
         .catch(err => res.status(400).json({
            status: 'Bad Request'
-        });
+        }))
 });
 
 /**
@@ -140,7 +140,7 @@ router.route('/').post( adoptionValidationRules(), validate, (req, res) => {
          })
         .catch(err => res.status(400).json({
            status: 'Bad Request'
-        });
+        }))
 
 });
 
