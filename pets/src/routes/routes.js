@@ -59,7 +59,9 @@ const upload = multer({
 router.route('/pets').get((req, res) => {
     Pet.find()
         .then(pets => res.status(200).json(pets))
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+           status: 'Bad Request'
+        });
 });
 
 /**
@@ -95,9 +97,13 @@ router.route('/pets/:id').get((req, res) => {
             if(pet)
                 res.status(200).json(pet)
             else
-                res.status(404).json('Pet not found')
+                res.status(404).json({
+                   status: 'Pet not found.'
+                });
         })
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+            status: 'Bad Request'
+        });
 });
 
 /**
@@ -157,7 +163,9 @@ router.route('/owners/:id/pets').post( upload.single('image'), petValidationRule
                 pet: newPet
             });
         })
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+           status: 'Bad Request'
+        });
 
         /*})
         .catch(err => res.status(404).send({
@@ -223,7 +231,7 @@ router.route('/owners/:owner_id/pets/:pet_id').put( upload.single('image'), petV
     });
 
     if(req.file) {
-        newPet.image = req.file.path;
+        newPet.image = req.file.filename;
     }
     Pet.findOneAndUpdate({_id: req.params.pet_id}, newPet, {new: true})
         .then((petUpdated) => {
@@ -241,11 +249,15 @@ router.route('/owners/:owner_id/pets/:pet_id').put( upload.single('image'), petV
                 })
             }
             else {
-                res.status(404).send('Pet not found');
+                res.status(404).json({
+                  status: 'Pet not found.'
+               });
             }
 
         })
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+            status: 'Bad Request'
+         });
 });
 
 /**
@@ -280,10 +292,14 @@ router.route('/owners/:owner_id/pets/:pet_id').delete((req, res) => {
         .then((deletedPet) => {
             //console.log("deletedPet : " + deletedPet);
             if(!deletedPet) {
-                res.status(404).json('Pet not found.');
+                res.status(404).json({
+                   status: 'Pet not found.'
+                });
             }
             else {
-                res.status(200).json('Pet deleted.');
+                res.status(200).json({
+                   status: 'Pet deleted successfully!'
+                });
 
                 if(process.env.NODE_ENV != 'test') {
                     // Emit PetDeleted Event
@@ -298,7 +314,9 @@ router.route('/owners/:owner_id/pets/:pet_id').delete((req, res) => {
                 }
             }
         })
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+           status: 'Bad Request'
+        });
 });
 
 // BATCH Delete
@@ -311,21 +329,18 @@ router.route('/owners/:owner_id/pets').delete((req, res) => {
     Pet.deleteMany({ _id: { $in: ids_array }})
         .then((result) => {
             console.log("Pets deleted! " + result);
-            res.status(200).send("Batch Delete Successful");
+            res.status(200).json({
+              status: 'Batch Delete Successful'
+            });
         })
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+           status: 'Bad Request'
+        });
 });
 
 // Event Listener for Events Received
 router.route('/events').post((req, res) => {
     console.log("Event Received in Pet Service: " + req.body.type);
-
-    const { type, data } = req.body;
-
-    if(type === "AdoptionCompleted") {
-        // Delete the pet by id
-    }
-
     res.send("Event Received!");
 });
 

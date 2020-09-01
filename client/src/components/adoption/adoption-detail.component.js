@@ -30,7 +30,6 @@ const AdoptionDetail = () => {
     return(
         <div className="content-div">
             <div className="mb-3">
-                <p>Your adoption is successfully complete!</p>
                 <h2>Adoption Detail</h2>
             </div>
             <div className="content-div adoption-detail row pb-3">

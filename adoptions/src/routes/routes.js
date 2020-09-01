@@ -29,7 +29,9 @@ const { adoptionValidationRules, validate } = require('../middleware/validator.j
 router.route('/').get((req, res) => {
     Adoption.find()
         .then(adoptions => res.status(200).json(adoptions))
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+           status: 'Bad Request'
+        });
 });
 
 /**
@@ -66,10 +68,14 @@ router.route('/:adoption_id').get((req, res) => {
                 res.status(200).json(adoption);
             }
             else {
-                res.status(404).json('Adoption not found');
+                res.status(404).json({
+                  status: 'Adoption Not Found'
+               });
             }
         })
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+           status: 'Bad Request'
+        });
 });
 
 /**
@@ -132,7 +138,9 @@ router.route('/').post( adoptionValidationRules(), validate, (req, res) => {
                 id: newAdoption._id
             });
          })
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+           status: 'Bad Request'
+        });
 
 });
 

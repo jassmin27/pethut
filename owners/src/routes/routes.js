@@ -32,7 +32,9 @@ const { ownerValidationRules, validate } = require('../middleware/validator.js')
 router.route('/').get((req, res) => {
     Owner.find()
         .then(owners => res.status(200).json(owners))
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+           status: 'Bad Request'
+        });
 });
 
 /**
@@ -68,9 +70,13 @@ router.route('/:id').get((req, res) => {
             if(owner)
                 res.status(200).json(owner)
             else
-                res.status(404).json('Owner not found')
+                res.status(404).json({
+                  status: 'Owner not found.'
+               });
         })
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+           status: 'Bad Request'
+        });
 });
 
 /**
@@ -134,9 +140,13 @@ router.route('/').post( ownerValidationRules(), validate, (req, res) => {
                         id: newOwner._id
                     });
                  })
-                .catch(err => res.status(400).json('Error: ' + err));
+                .catch(err => res.status(400).json({
+                   status: 'Bad Request'
+                });
         })
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+           status: 'Bad Request'
+        });
 
 });
 
@@ -205,11 +215,15 @@ router.route('/:id').put( ownerValidationRules(), validate, (req, res) => {
                 }
             }
             else {
-                res.status(404).send('Owner not found');
+                res.status(404).json({
+                  status: 'Owner not found'
+               });
             }
 
         })
-        .catch(err => res.status(400).json('Error emitting event: ' + err));
+        .catch(err => res.status(400).json({
+            status: 'Bad Request'
+         });
 
 });
 
@@ -264,7 +278,9 @@ router.route('/:id').delete((req, res) => {
 
             //.then(() => console.log("Event Emitted - OwnerDeleted"));
         })
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json({
+             status: 'Bad Request'
+        });
 });
 
 module.exports = router;
