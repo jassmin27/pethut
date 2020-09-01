@@ -97,7 +97,7 @@ class AddOwner extends Component {
 
     render() {
         if (this.state.redirect) {
-            return <Redirect to={'/owners/' + ownerId} />;
+            return <Redirect to={'/owners/' + this.state.ownerId} />;
         } else {
             return(
                 <div className="my-4 div-width">
