@@ -33,7 +33,7 @@ app.use('/adoptions-api', swaggerUI.serve, swaggerUI.setup(swaggerDocs, {explore
 
 // Event Listener for Events Received
 app.post('/events', (req, res) => {
-    /*console.log("Event Received : " + req.body.type);*/
+    console.log("Event Received : " + req.body.type);
     res.send({});
 });
 

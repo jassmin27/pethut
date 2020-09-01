@@ -139,7 +139,7 @@ router.route('/events').post((req, res) => {
     else if(type === "PetUpdated") {
         const { petUpdated, ownerId } = data;
 
-        Query.findOneAndUpdate({ownerId:ownerId, pets:{ _id: petUpdated._id}}, {$set: petUpdated}, {new: true})
+        Query.findOneAndUpdate({ ownerId:ownerId, "pets._id": petUpdated._id }, {$set: { "pets.$" :petUpdated }}, {new: true})
               .then((response) => {
                  console.log("Response Pet Updated in Query");
                  console.log(response);

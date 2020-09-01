@@ -24,7 +24,6 @@ app.post('/events', (req, res) => {
     //Adoption
     axios.post('http://adoptions-srv:5003/events', event);
 
-
     res.send({status: 'OK, from Event-Bus'});
 });
 
